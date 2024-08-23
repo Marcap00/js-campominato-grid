@@ -1,3 +1,39 @@
+/* # CSS MARGIN */
+
 * {
     font-family: 'Poppins';
+}
+
+/* # GENERICS */
+header {
+    height: 70px;
+}
+
+main {
+    height: calc(100vh - 140px);
+    background-color: #031732;
+}
+
+footer {
+    height: 70px;
+}
+
+
+/* # UTILITIES */
+.btn.btn-blue {
+    background-color: transparent;
+    color: #031732;
+    border: 2px solid currentColor;
+}
+
+/* # HEADER */
+
+h1.text-blue {
+    color: #031732;
+}
+
+/* # FOOTER */
+.footer-logo {
+    height: 20px;
+    flex-basis: 20px;
 }
