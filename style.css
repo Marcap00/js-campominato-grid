@@ -28,12 +28,12 @@ footer {
 }
 
 /* # LAYOUT */
-.grid {
+#grid {
     height: 70vh;
     width: 70vh;
 }
 
-.grid.row-cols-10 > * {
+#grid.row-cols-10 > * {
     flex-basis: 10%;
 }
 
