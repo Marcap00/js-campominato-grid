@@ -20,12 +20,31 @@ footer {
 
 
 /* # UTILITIES */
+
 .btn.btn-blue {
     background-color: transparent;
     color: #031732;
     border: 2px solid currentColor;
 }
 
+/* # LAYOUT */
+.grid {
+    height: 70vh;
+    width: 70vh;
+}
+
+.grid.row-cols-10 > * {
+    flex-basis: 10%;
+}
+
+.square {
+    height: 10%;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
 /* # HEADER */
 
 h1.text-blue {
