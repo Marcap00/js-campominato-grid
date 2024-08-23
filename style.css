@@ -18,9 +18,7 @@ footer {
     height: 70px;
 }
 
-
 /* # UTILITIES */
-
 .btn.btn-blue {
     background-color: transparent;
     color: #031732;
@@ -37,6 +35,14 @@ footer {
     flex-basis: 10%;
 }
 
+
+/* # HEADER */
+h1.text-blue {
+    color: #031732;
+}
+
+/* # MAIN */
+/* # SQUARE */
 .square {
     height: 10%;
     border: 1px solid #fff;
@@ -44,11 +50,11 @@ footer {
     justify-content: center;
     align-items: center;
     color: #fff;
+    cursor: pointer;
 }
-/* # HEADER */
 
-h1.text-blue {
-    color: #031732;
+.square.clicked {
+    background-color: dodgerblue;
 }
 
 /* # FOOTER */
