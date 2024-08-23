@@ -19,7 +19,8 @@ footer {
 }
 
 /* # UTILITIES */
-.btn.btn-blue {
+.btn.btn-blue,
+select#difficulty {
     background-color: transparent;
     color: #031732;
     border: 2px solid currentColor;
