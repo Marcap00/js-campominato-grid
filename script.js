@@ -46,6 +46,15 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 
 */
 
+// #Funzioni
+// Funzione che crea un nodo 
+function createNode(type, className, content) {
+    const node = document.createElement(type);
+    node.className = className;
+    node.append(content);
+    return node;
+}
+
 // # Fase di preparazione
 // Recuperiamo gli elementi dal DOM
 const button = document.querySelector('button');
@@ -54,21 +63,24 @@ console.log(button);
 console.log(gridElement);
 
 // Preparo le variabili
-const max = 100;
-const min = 1;
+const rows = 10;
+const cols = 10;
+const cells = rows * cols;
 
 
 // # Fase di gestione eventi
 // Mettiamo in ascolto il bottone sugli eventi
 button.addEventListener('click', function() {
-    for(let i = min; i <= max; i++ ) {
-        const square = document.createElement('div');
-        square.className = 'square';
-        const content = i;
-        square.append(content);
+    for(let i = 1; i <= cells; i++ ) {
+        // Creiamo i div con classe square e la i come contenuto
+        const square = createNode('div', 'square', i);
+        // Lo agganciamo alla grid
         gridElement.appendChild(square);
+        // Mettiamo in ascolto sugli con il click la cella 
         square.addEventListener('click', function() {
-            console.log(`Hai cliccato la cella ${content}`);
+            // Stampiamo in console quale cella abbiamo cliccato
+            console.log(`Hai cliccato la cella ${i}`);
+            // Aggiungo e tolgo all'occorrenza la classe clicked
             square.classList.toggle('clicked');  
         })
     }
