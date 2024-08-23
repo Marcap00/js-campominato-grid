@@ -67,5 +67,9 @@ button.addEventListener('click', function() {
         const content = i;
         square.append(content);
         gridElement.appendChild(square);
+        square.addEventListener('click', function() {
+            console.log(`Hai cliccato la cella ${content}`);
+            square.classList.toggle('clicked');  
+        })
     }
 })
