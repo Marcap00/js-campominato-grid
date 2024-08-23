@@ -18,6 +18,10 @@ footer {
     height: 70px;
 }
 
+select#difficulty {
+    cursor: pointer;
+}
+
 /* # UTILITIES */
 .btn.btn-blue,
 select#difficulty {
@@ -32,10 +36,20 @@ select#difficulty {
     width: 70vh;
 }
 
-#grid.row-cols-10 > * {
+#grid.grid-cols-10 > * {
     flex-basis: 10%;
+    height: 10%;
 }
 
+#grid.grid-cols-9 > * {
+    flex-basis: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+#grid.grid-cols-7 > * {
+    flex-basis: calc(100% / 7);
+    height: calc(100% / 7);
+}
 
 /* # HEADER */
 h1.text-blue {
@@ -45,7 +59,7 @@ h1.text-blue {
 /* # MAIN */
 /* # SQUARE */
 .square {
-    height: 10%;
+    
     border: 1px solid #fff;
     display: flex;
     justify-content: center;

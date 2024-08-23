@@ -55,22 +55,10 @@ function createNode(type, className, content) {
     return node;
 }
 
-// # Fase di preparazione
-// Recuperiamo gli elementi dal DOM
-const button = document.querySelector('button');
-const gridElement = document.getElementById('grid');
-console.log(button);
-console.log(gridElement);
+// Funzione che crea una griglia
+function createGrid(rows, cols) {
+    const cells = rows * cols;
 
-// Preparo le variabili
-const rows = 10;
-const cols = 10;
-const cells = rows * cols;
-
-
-// # Fase di gestione eventi
-// Mettiamo in ascolto il bottone sugli eventi
-button.addEventListener('click', function() {
     for(let i = 1; i <= cells; i++ ) {
         // Creiamo i div con classe square e la i come contenuto
         const square = createNode('div', 'square', i);
@@ -84,4 +72,37 @@ button.addEventListener('click', function() {
             square.classList.toggle('clicked');  
         })
     }
+}
+
+// # Fase di preparazione
+// Recuperiamo gli elementi dal DOM
+const difficulty = document.getElementById('difficulty');
+const button = document.getElementById('cta-btn');
+const gridElement = document.getElementById('grid');
+console.log(difficulty);
+console.log(button);
+console.log(gridElement);
+
+
+
+
+// # Fase di gestione eventi
+// Mettiamo in ascolto il bottone sugli eventi
+button.addEventListener('click', function() {
+    // Recuperiamo l'input della difficoltà
+    const difficultyValue = difficulty.value;
+    console.log(difficultyValue);
+
+    if (difficultyValue === 'hard') {
+        gridElement.classList.add('grid-cols-10');
+        createGrid(10, 10);
+    } else if (difficultyValue === 'medium') {
+        gridElement.classList.add('grid-cols-9');
+        createGrid(9,9)
+    } else if (difficultyValue === 'easy') {
+        gridElement.classList.add('grid-cols-7');
+        createGrid(7,7)
+    }
+
+    
 })
